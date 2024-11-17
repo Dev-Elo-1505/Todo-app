@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 
+[data-theme="light"] {
+  --color-bg: hsl(0, 0%, 98%);
+  --color-primary: hsl(236, 33%, 92%);
+  --bg-image: url("./images/bg-mobile-light.jpg");
+}
+
+[data-theme="dark"] {
+  --color-bg: hsl(235, 21%, 11%);
+  --color-primary: hsl(235, 24%, 19%);
+  --bg-image: url("./images/bg-mobile-dark.jpg");
+}
+
 html {
   font-size: 62.5%;
 }
@@ -13,6 +25,16 @@ html {
 body {
   font-size: 1.8rem;
   font-family: "Josefin Sans", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+}
+
+header {
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
 }
 
 .attribution {
