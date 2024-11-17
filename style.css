@@ -1,15 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 
-[data-theme="light"] {
+:root {
   --color-bg: hsl(0, 0%, 98%);
-  --color-primary: hsl(236, 33%, 92%);
+  --color-primary: hsl(236, 9%, 61%);
   --bg-image: url("./images/bg-mobile-light.jpg");
+  --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  --placeholder-text: hsl(236, 33%, 92%);
 }
 
-[data-theme="dark"] {
+.darkmode {
   --color-bg: hsl(235, 21%, 11%);
   --color-primary: hsl(235, 24%, 19%);
   --bg-image: url("./images/bg-mobile-dark.jpg");
+  --box-shadow: rgba(0, 4, 7, 0.2) 0px 8px 24px;
+  --placeholder-text: hsl(235, 24%, 19%);
 }
 
 html {
@@ -23,7 +27,7 @@ html {
 }
 
 body {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-family: "Josefin Sans", sans-serif;
   background-color: var(--color-bg);
   color: var(--color-primary);
@@ -35,6 +39,90 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   height: 200px;
+  padding: 2rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+header h2 {
+  letter-spacing: 10px;
+}
+
+#theme-switch {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
+}
+
+main {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.new-todo {
+  background-color: var(--color-bg);
+  width: 100%;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.new-todo input {
+  border: none;
+  margin-right: 5px;
+}
+
+.new-todo input::placeholder {
+  color: var(--placeholder-text);
+}
+
+/* .new-todo input[type="checkbox"] {
+  border: 1px solid hsl(236, 33%, 92%);
+} */
+
+.todos {
+  width: 100%;
+  margin: 10px;
+  box-shadow: rgba(0, 4, 7, 0.2) 0px 8px 24px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.status {
+  width: 100%;
+  margin: 10px;
+  box-shadow: var(--box-shadow);
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+/* .new-todo {
+  background-color: var(--color-bg);
+}
+
+.new-todo input {
+  border: none;
 }
 
 .attribution {
@@ -43,4 +131,4 @@ header {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
-}
+} */
