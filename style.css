@@ -5,15 +5,17 @@
   --color-primary: hsl(236, 9%, 61%);
   --bg-image: url("./images/bg-mobile-light.jpg");
   --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  --placeholder-text: hsl(236, 33%, 92%);
+  --placeholder-text: hsl(233, 11%, 84%);
+  --todo-bg: #fff;
 }
 
 .darkmode {
   --color-bg: hsl(235, 21%, 11%);
-  --color-primary: hsl(235, 24%, 19%);
+  --color-primary: hsl(236, 33%, 92%);
   --bg-image: url("./images/bg-mobile-dark.jpg");
   --box-shadow: rgba(0, 4, 7, 0.2) 0px 8px 24px;
-  --placeholder-text: hsl(235, 24%, 19%);
+  --placeholder-text: hsl(234, 11%, 52%);
+  --todo-bg: hsl(235, 24%, 19%)
 }
 
 html {
@@ -71,69 +73,129 @@ header h2 {
 
 main {
   position: absolute;
-  top: 60%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
 }
 
 .new-todo {
-  background-color: var(--color-bg);
+  background-color: var(--todo-bg);
   width: 100%;
   margin: 10px;
-  padding: 10px 20px;
+  padding: 12px 22px;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .new-todo input {
   border: none;
-  margin-right: 5px;
+  margin-right: 10px;
+  font-size: 14px;
+  color: var(--color-primary);
 }
 
 .new-todo input[type="text"] {
-  width: 90%;
+  width: 80%;
+  background-color: var(--todo-bg);
+}
+.new-todo input[type="text"]:focus {
+  outline: none;
+  background-color: var(--todo-bg);
 }
 
 .new-todo input::placeholder {
   color: var(--placeholder-text);
+  font-size: 12px;
+}
+
+.new-todo input[type="radio"]::placeholder {
+  accent-color: var(--placeholder-text);
+  width: 100px;
+}
+
+.todos,
+.todo-info, .todo-status {
+  width: 100%;
+  box-shadow: var(--box-shadow);
+  background-color: var(--todo-bg);
 }
 
 .todos {
-  width: 100%;
-  margin: 10px;
-  box-shadow: var(--box-shadow);
-  padding: 10px 20px;
-  border-radius: 5px;
-  background-color: #fff;
+  margin: 10px 10px 0 10px;
+  border-radius: 5px 5px 0 0;
 }
 
-.todos ul {
-  list-style: none;
-}
-
-.todos ul li {
-  padding: 1rem;
-  border-bottom: 1px solid hsl(235, 19%, 35%);
-  display: flex;
-  gap: 1rem;
+.todo-info {
+  margin: 0 10px 10px 10px;
+  padding: 12px 22px;
+  display:none;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--placeholder-text);
+  border-radius: 0 0 5px 5px;
 }
 
 .todo-status {
-  width: 100%;
-  margin: 10px;
-  box-shadow: var(--box-shadow);
-  padding: 10px 20px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: var(--color-primary);
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+padding: 12px 22px;
+border-radius: 5px;
+margin: 10px 10px 30px 10px;
+font-weight: bold;
+color: var(--placeholder-text);
 }
 
 .drag-p {
   text-align: center;
+  color: var(--placeholder-text);
 }
 
 .completed {
   text-decoration: line-through;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+  padding: 12px 22px;
+}
+
+.todo-in {
+  display: flex;
+  gap: 10px;
+}
+
+#clear-completed {
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+#clear-completed:hover {
+  filter: brightness(95%);
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --bg-image: url("./images/bg-desktop-light.jpg");
+  }
+
+  .darkmode {
+    --bg-image: url("./images/bg-desktop-dark.jpg");
+  }
+
+  header {
+    justify-content: center;
+    align-items: center;
+    gap: 230px;
+  }
+
+  main {
+    width: 400px;
+  }
 }
