@@ -149,6 +149,10 @@ font-weight: bold;
 color: var(--placeholder-text);
 }
 
+.todo-status p {
+  cursor: pointer;
+}
+
 .drag-p {
   text-align: center;
   color: var(--placeholder-text);
