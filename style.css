@@ -33,6 +33,7 @@ body {
   font-family: "Josefin Sans", sans-serif;
   background-color: var(--color-bg);
   color: var(--color-primary);
+  min-height: 100vh;
 }
 
 header {
@@ -46,7 +47,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  position: relative;
+  position: fixed;
+  width: 100%;
 }
 
 header h2 {
@@ -72,11 +74,23 @@ header h2 {
 }
 
 main {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8rem;
+}
+
+.todo-body {
+  position: relative;
+  margin: auto;
+  padding-top: 2rem;
   width: 80%;
+}
+
+.todo-body {
+  margin: 0 auto;
+  width: 100%;
 }
 
 .new-todo {
@@ -125,6 +139,8 @@ main {
 .todos {
   margin: 10px 10px 0 10px;
   border-radius: 5px 5px 0 0;
+  max-height: 300px;
+  overflow-x: auto;
 }
 
 .todo-info {

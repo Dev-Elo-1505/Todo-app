@@ -23,7 +23,7 @@ Your users should be able to:
 - Add new todos to the list DONE✅
 - Mark todos as complete DONE✅
 - Delete todos from the list DONE✅
-- Filter by all/active/complete todos
+- Filter by all/active/complete todos DONE✅
 - Clear all completed todos DONE✅
 - Toggle light and dark mode DONE✅
 - **Bonus**: Drag and drop to reorder items on the list
