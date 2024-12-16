@@ -78,19 +78,14 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 8rem;
+  padding: 8rem 2rem 0 2rem;
 }
 
 .todo-body {
   position: relative;
   margin: auto;
   padding-top: 2rem;
-  width: 80%;
-}
-
-.todo-body {
-  margin: 0 auto;
-  width: 100%;
+  width: 90%;
 }
 
 .new-todo {
@@ -216,6 +211,11 @@ color: var(--placeholder-text);
   }
 
   main {
-    width: 400px;
+    padding-top: 12rem;
   }
+
+  .todo-body {
+    width: 500px;
+  }
+
 }
